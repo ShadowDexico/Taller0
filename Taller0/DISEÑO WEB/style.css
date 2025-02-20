@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #f8b400;
+    padding: 10px;
+}
+header h1 {
+    display: inline;
+    margin-right: 50px;
+}
+nav {
+    display: inline;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+}
+.section {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+.section img {
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+}

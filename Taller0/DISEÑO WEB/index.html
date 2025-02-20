@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pancaliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #f39c12;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e67e22;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #d35400;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        section {
+            display: none; /* Ocultamos todas las secciones por defecto */
+            width: 45%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        section.active {
+            display: block; /* Solo mostramos la sección activa */
+        }
+
+        section h2 {
+            color: #f39c12;
+            text-align: center;
+        }
+
+        .section-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .section-content img {
+            width: 40%;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .section-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #f39c12;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pancaliente</h1>
+    <p>La mejor panadería de la ciudad, con productos frescos y deliciosos.</p>
+</header>
+
+<nav>
+    <a href="#inicio" onclick="mostrarseccion('inicio')">Inicio</a>
+    <a href="#pan" onclick="mostrarseccion('pan')">Pan</a>
+    <a href="#queso" onclick="mostrarseccion('queso')">Quesos</a>
+    <a href="#pasteles" onclick="mostrarseccion('pasteles')">Pasteles</a>
+    <a href="#bebidas" onclick="mostrarseccion('bebidas')">Bebidas</a>
+</nav>
+
+<div class="content">
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="active">
+        <h2>Panadería Pancaliente</h2>
+        <div class="section-content">
+            <img src="/imagenes/Pancaliente.jpg" alt="Imagen de panadería">
+            <p>En Pancaliente, ofrecemos una experiencia única en cada bocado. Desde panes frescos hasta deliciosos pasteles, nuestro objetivo es endulzar tu día con lo mejor de la panadería artesanal.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Pan -->
+    <section id="pan">
+        <h2>Pan</h2>
+        <div class="section-content">
+            <img src="/imagenes/Pan.jpg" alt="Imagen de pan">
+            <p>Ofrecemos una variedad de panes frescos, desde baguettes hasta panes integrales. Todos hechos con los mejores ingredientes y el toque especial de nuestra panadería.</p>
+        </div>
+    </section>
+</div>
+
+<div class="content">
+    <!-- Sección de Queso -->
+    <section id="queso">
+        <h2>Queso</h2>
+        <div class="section-content">
+            <img src="/imagenes/quesos.jpg" alt="Imagen de queso">
+            <p>Disfruta de nuestros panes rellenos con quesos suaves o curados. Cada mordisco es una combinación perfecta entre la suavidad del pan y el sabor intenso del queso.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Pasteles -->
+    <section id="pasteles">
+        <h2>Pasteles</h2>
+        <div class="section-content">
+            <img src="/imagenes/pasteles.jpg" alt="Imagen de pasteles">
+            <p>Endulza tu día con nuestros pasteles artesanales. Cada uno es preparado con amor y atención a los detalles para ofrecerte una experiencia deliciosa.</p>
+        </div>
+    </section>
+</div>
+
+<div class="content">
+    <!-- Sección de Bebidas -->
+    <section id="bebidas">
+        <h2>Bebidas</h2>
+        <div class="section-content">
+            <img src="/imagenes/REFRESCOS.jpg" alt="Imagen de bebidas">
+            <p>Complementa tu experiencia en Pancaliente con nuestras bebidas frías y calientes, perfectas para disfrutar con nuestros productos frescos.</p>
+        </div>
+    </section>
+</div>
+
+
+
+<script>
+    // Mostramos la sección que se ha clickeado
+    function mostrarseccion(seccion) {
+        // Ocultar todas las secciones
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        // Mostrar solo la sección seleccionada
+        document.getElementById(seccion).classList.add('active');
+    }
+
+    // Al cargar la página, mostramos la sección de 'inicio'
+    window.onload = function() {
+        mostrarseccion('inicio');
+    }
+</script>
+
+</body>
+</html>
